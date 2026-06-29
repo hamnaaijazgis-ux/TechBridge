@@ -1,0 +1,1038 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>[Company Name] — Enterprise IT &amp; Higher Education Technology</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;800&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+
+:root{
+  --ink:       #0F1923;
+  --steel:     #1E3A5F;
+  --blue:      #2563EB;
+  --blue-lt:   #3B7CF8;
+  --slate:     #64748B;
+  --rule:      #E2E8F0;
+  --bg:        #F8FAFC;
+  --white:     #FFFFFF;
+  --serif:     'Playfair Display', Georgia, serif;
+  --sans:      'DM Sans', system-ui, sans-serif;
+  --max:       1140px;
+}
+
+html{scroll-behavior:smooth}
+body{font-family:var(--sans);color:var(--ink);background:var(--white);-webkit-font-smoothing:antialiased;font-size:16px;line-height:1.6}
+
+/* ─── NAV ─────────────────────────────────────────────────── */
+nav{
+  position:fixed;top:0;left:0;right:0;z-index:200;
+  background:rgba(255,255,255,0.97);
+  border-bottom:1px solid var(--rule);
+  backdrop-filter:blur(8px);
+  height:64px;
+  display:flex;align-items:center;
+  padding:0 48px;
+  justify-content:space-between;
+}
+.nav-logo{
+  font-family:var(--serif);
+  font-size:1.25rem;
+  color:var(--ink);
+  text-decoration:none;
+  font-weight:700;
+  letter-spacing:-0.01em;
+}
+.nav-logo b{color:var(--blue)}
+.nav-links{display:flex;gap:36px;list-style:none;align-items:center}
+.nav-links a{
+  text-decoration:none;
+  color:var(--slate);
+  font-size:0.875rem;
+  font-weight:500;
+  letter-spacing:0.01em;
+  transition:color .18s;
+}
+.nav-links a:hover{color:var(--blue)}
+.nav-btn{
+  background:var(--blue);
+  color:var(--white)!important;
+  padding:9px 22px;
+  border-radius:6px;
+  font-weight:600!important;
+  transition:background .18s!important;
+}
+.nav-btn:hover{background:var(--blue-lt)!important}
+
+/* ─── HERO ────────────────────────────────────────────────── */
+#hero{
+  padding:148px 48px 100px;
+  background:var(--white);
+  border-bottom:1px solid var(--rule);
+  max-width:100%;
+  position:relative;
+  overflow:hidden;
+}
+.hero-bg-line{
+  position:absolute;
+  top:0;right:0;bottom:0;
+  width:42%;
+  background:var(--bg);
+  clip-path:polygon(8% 0,100% 0,100% 100%,0 100%);
+  z-index:0;
+}
+.hero-inner{
+  position:relative;z-index:1;
+  max-width:var(--max);
+  margin:0 auto;
+  display:grid;
+  grid-template-columns:1fr 420px;
+  gap:80px;
+  align-items:center;
+}
+.hero-tag{
+  display:inline-block;
+  font-size:0.72rem;
+  font-weight:600;
+  letter-spacing:0.12em;
+  text-transform:uppercase;
+  color:var(--blue);
+  border:1px solid var(--blue);
+  padding:5px 14px;
+  border-radius:2px;
+  margin-bottom:28px;
+}
+.hero-h1{
+  font-family:var(--serif);
+  font-size:clamp(2.6rem,4.5vw,4rem);
+  font-weight:800;
+  color:var(--ink);
+  line-height:1.08;
+  letter-spacing:-0.02em;
+  margin-bottom:28px;
+}
+.hero-h1 em{
+  font-style:normal;
+  color:var(--blue);
+  position:relative;
+  display:inline-block;
+}
+.hero-h1 em::after{
+  content:'';
+  position:absolute;
+  bottom:-4px;left:0;right:0;
+  height:3px;
+  background:var(--blue);
+  opacity:0.25;
+}
+.hero-p{
+  color:var(--slate);
+  font-size:1.05rem;
+  line-height:1.75;
+  max-width:520px;
+  margin-bottom:40px;
+}
+.hero-actions{display:flex;gap:14px;align-items:center;flex-wrap:wrap}
+.btn-blue{
+  background:var(--blue);
+  color:var(--white);
+  padding:14px 30px;
+  border-radius:6px;
+  text-decoration:none;
+  font-weight:600;
+  font-size:0.9rem;
+  transition:background .18s,transform .15s;
+  display:inline-block;
+}
+.btn-blue:hover{background:var(--blue-lt);transform:translateY(-1px)}
+.btn-text{
+  color:var(--ink);
+  font-weight:600;
+  font-size:0.9rem;
+  text-decoration:none;
+  display:inline-flex;align-items:center;gap:6px;
+  transition:color .18s;
+}
+.btn-text:hover{color:var(--blue)}
+.btn-text svg{width:14px;height:14px;transition:transform .18s}
+.btn-text:hover svg{transform:translateX(3px)}
+
+/* Hero right panel */
+.hero-panel{
+  background:var(--ink);
+  border-radius:10px;
+  padding:40px 36px;
+  color:var(--white);
+}
+.panel-label{
+  font-size:0.7rem;
+  font-weight:700;
+  letter-spacing:0.14em;
+  text-transform:uppercase;
+  color:rgba(255,255,255,0.4);
+  margin-bottom:24px;
+  padding-bottom:16px;
+  border-bottom:1px solid rgba(255,255,255,0.08);
+}
+.panel-list{list-style:none}
+.panel-list li{
+  display:flex;align-items:center;gap:14px;
+  padding:13px 0;
+  border-bottom:1px solid rgba(255,255,255,0.06);
+  font-size:0.9rem;
+  color:rgba(255,255,255,0.8);
+  font-weight:400;
+}
+.panel-list li:last-child{border-bottom:none}
+.pl-dot{
+  width:8px;height:8px;
+  border-radius:50%;
+  background:var(--blue);
+  flex-shrink:0;
+}
+
+/* ─── TICKER ──────────────────────────────────────────────── */
+.ticker{
+  background:var(--steel);
+  padding:15px 0;
+  overflow:hidden;
+  white-space:nowrap;
+  border-top:1px solid rgba(255,255,255,0.06);
+  border-bottom:1px solid rgba(255,255,255,0.06);
+}
+.ticker-inner{
+  display:inline-flex;
+  animation:tick 32s linear infinite;
+}
+.ticker-inner span{
+  font-size:0.75rem;
+  font-weight:600;
+  letter-spacing:0.1em;
+  text-transform:uppercase;
+  color:rgba(255,255,255,0.55);
+  padding:0 36px;
+}
+.ticker-inner span b{color:rgba(255,255,255,0.18);margin-right:36px}
+@keyframes tick{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+
+/* ─── SECTIONS ───────────────────────────────────────────── */
+.wrap{max-width:var(--max);margin:0 auto;padding:0 48px}
+.sec{padding:96px 0}
+.sec-alt{background:var(--bg)}
+
+.sec-head{margin-bottom:56px}
+.sec-label{
+  font-size:0.72rem;
+  font-weight:700;
+  letter-spacing:0.14em;
+  text-transform:uppercase;
+  color:var(--blue);
+  margin-bottom:12px;
+}
+.sec-h2{
+  font-family:var(--serif);
+  font-size:clamp(1.8rem,3vw,2.6rem);
+  font-weight:800;
+  color:var(--ink);
+  letter-spacing:-0.025em;
+  line-height:1.1;
+  margin-bottom:14px;
+}
+.sec-sub{
+  color:var(--slate);
+  font-size:1rem;
+  max-width:560px;
+  line-height:1.72;
+}
+
+/* ─── ABOUT ──────────────────────────────────────────────── */
+#about .about-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:72px;
+  align-items:start;
+}
+.about-body p{
+  color:#4B5563;
+  font-size:1rem;
+  line-height:1.78;
+  margin-bottom:20px;
+}
+.about-callout{
+  margin-top:32px;
+  padding:28px 32px;
+  border-left:3px solid var(--blue);
+  background:var(--bg);
+  border-radius:0 8px 8px 0;
+}
+.about-callout p{
+  color:var(--steel)!important;
+  font-size:1rem!important;
+  font-weight:500;
+  line-height:1.65!important;
+  font-style:italic;
+  margin:0!important;
+}
+
+.about-pillars{display:flex;flex-direction:column;gap:0}
+.pillar{
+  padding:24px 0;
+  border-bottom:1px solid var(--rule);
+  display:flex;gap:20px;align-items:flex-start;
+}
+.pillar:first-child{padding-top:0}
+.pillar-icon{
+  width:40px;height:40px;flex-shrink:0;
+  background:var(--bg);
+  border-radius:8px;
+  display:flex;align-items:center;justify-content:center;
+  font-size:1.1rem;
+  margin-top:2px;
+}
+.pillar-title{font-weight:700;color:var(--ink);font-size:0.95rem;margin-bottom:4px}
+.pillar-desc{color:var(--slate);font-size:0.875rem;line-height:1.6}
+
+/* ─── SERVICES ───────────────────────────────────────────── */
+.svc-grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:2px;
+  background:var(--rule);
+  border:1px solid var(--rule);
+  border-radius:10px;
+  overflow:hidden;
+}
+.svc-card{
+  background:var(--white);
+  padding:36px 32px;
+  cursor:pointer;
+  transition:background .18s;
+  display:flex;flex-direction:column;
+  position:relative;
+}
+.svc-card:hover{background:var(--bg)}
+.svc-card.active{background:var(--ink);color:var(--white)}
+.svc-top-bar{
+  height:3px;
+  background:var(--rule);
+  margin-bottom:28px;
+  transition:background .18s;
+}
+.svc-card.active .svc-top-bar{background:var(--blue)}
+.svc-card:hover:not(.active) .svc-top-bar{background:var(--blue);opacity:0.4}
+.svc-area{
+  font-size:0.68rem;
+  font-weight:700;
+  letter-spacing:0.12em;
+  text-transform:uppercase;
+  color:var(--blue);
+  margin-bottom:10px;
+}
+.svc-card.active .svc-area{color:rgba(255,255,255,0.5)}
+.svc-name{
+  font-family:var(--serif);
+  font-size:1.05rem;
+  font-weight:700;
+  color:var(--ink);
+  line-height:1.25;
+  margin-bottom:14px;
+}
+.svc-card.active .svc-name{color:var(--white)}
+.svc-overview{
+  font-size:0.875rem;
+  color:var(--slate);
+  line-height:1.65;
+  flex:1;
+  margin-bottom:20px;
+}
+.svc-card.active .svc-overview{color:rgba(255,255,255,0.6)}
+.svc-tags{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:20px}
+.stag{
+  font-size:0.7rem;
+  font-weight:600;
+  padding:4px 10px;
+  border-radius:3px;
+  background:var(--bg);
+  color:var(--slate);
+  letter-spacing:0.03em;
+}
+.svc-card.active .stag{background:rgba(255,255,255,0.08);color:rgba(255,255,255,0.5)}
+.svc-more{
+  font-size:0.8rem;
+  font-weight:600;
+  color:var(--blue);
+  display:inline-flex;align-items:center;gap:5px;
+  cursor:pointer;
+  background:none;border:none;padding:0;
+  font-family:var(--sans);
+}
+.svc-card.active .svc-more{color:rgba(255,255,255,0.7)}
+
+/* Detail drawer */
+.svc-drawer{
+  display:none;
+  background:var(--ink);
+  color:var(--white);
+  padding:48px;
+  border-top:1px solid rgba(255,255,255,0.06);
+  animation:drawerIn .25s ease;
+}
+.svc-drawer.open{display:block}
+@keyframes drawerIn{from{opacity:0;transform:translateY(-8px)}to{opacity:1;transform:translateY(0)}}
+.drawer-inner{
+  max-width:var(--max);
+  margin:0 auto;
+  display:grid;
+  grid-template-columns:1fr 1fr 1fr;
+  gap:48px;
+}
+.d-col-title{
+  font-size:0.68rem;
+  font-weight:700;
+  letter-spacing:0.12em;
+  text-transform:uppercase;
+  color:var(--blue);
+  margin-bottom:16px;
+  padding-bottom:12px;
+  border-bottom:1px solid rgba(255,255,255,0.08);
+}
+.d-list{list-style:none}
+.d-list li{
+  font-size:0.875rem;
+  color:rgba(255,255,255,0.65);
+  padding:6px 0;
+  padding-left:14px;
+  position:relative;
+  line-height:1.5;
+}
+.d-list li::before{
+  content:'';
+  position:absolute;left:0;top:14px;
+  width:5px;height:1px;
+  background:var(--blue);
+}
+.d-chips{display:flex;flex-wrap:wrap;gap:8px}
+.d-chip{
+  font-size:0.78rem;font-weight:500;
+  padding:6px 13px;border-radius:4px;
+  background:rgba(255,255,255,0.07);
+  color:rgba(255,255,255,0.7);
+  border:1px solid rgba(255,255,255,0.1);
+}
+.d-relevance{
+  font-size:0.9rem;
+  color:rgba(255,255,255,0.75);
+  line-height:1.7;
+  border-left:2px solid var(--blue);
+  padding-left:16px;
+  font-style:italic;
+}
+
+/* ─── COMPETENCIES ───────────────────────────────────────── */
+.comp-table{width:100%;border-collapse:collapse}
+.comp-table tr{border-bottom:1px solid var(--rule)}
+.comp-table tr:last-child{border-bottom:none}
+.comp-table td{padding:28px 0;vertical-align:top}
+.comp-table td:first-child{
+  width:240px;
+  font-weight:700;
+  color:var(--ink);
+  font-size:0.95rem;
+  padding-right:40px;
+}
+.comp-items-row{display:flex;flex-wrap:wrap;gap:8px}
+.comp-pill{
+  font-size:0.8rem;font-weight:500;
+  padding:7px 16px;
+  border-radius:100px;
+  border:1px solid var(--rule);
+  color:var(--slate);
+  background:var(--white);
+  transition:border-color .15s,color .15s;
+}
+.comp-pill:hover{border-color:var(--blue);color:var(--blue)}
+
+/* ─── WHY ─────────────────────────────────────────────────── */
+#why{background:var(--ink)}
+#why .sec-h2{color:var(--white)}
+#why .sec-sub{color:rgba(255,255,255,0.5)}
+#why .sec-label{color:rgba(37,99,235,0.9)}
+
+.why-grid{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:1px;
+  background:rgba(255,255,255,0.06);
+  border:1px solid rgba(255,255,255,0.06);
+  border-radius:8px;
+  overflow:hidden;
+}
+.why-cell{
+  background:var(--ink);
+  padding:36px 28px;
+  transition:background .2s;
+}
+.why-cell:hover{background:#162030}
+.why-num{
+  font-family:var(--serif);
+  font-size:2.5rem;
+  font-weight:800;
+  color:rgba(255,255,255,0.07);
+  line-height:1;
+  margin-bottom:16px;
+}
+.why-title{
+  font-weight:700;
+  color:var(--white);
+  font-size:0.95rem;
+  margin-bottom:10px;
+}
+.why-desc{
+  font-size:0.855rem;
+  color:rgba(255,255,255,0.45);
+  line-height:1.68;
+}
+
+/* ─── CTA ─────────────────────────────────────────────────── */
+#cta{
+  background:var(--blue);
+  padding:80px 48px;
+}
+.cta-inner{
+  max-width:var(--max);margin:0 auto;
+  display:flex;align-items:center;justify-content:space-between;
+  gap:40px;flex-wrap:wrap;
+}
+.cta-h{
+  font-family:var(--serif);
+  font-size:2rem;font-weight:800;
+  color:var(--white);
+  letter-spacing:-0.02em;
+  margin-bottom:8px;
+}
+.cta-p{color:rgba(255,255,255,0.7);font-size:1rem}
+.btn-white{
+  background:var(--white);color:var(--blue);
+  padding:16px 34px;border-radius:6px;
+  text-decoration:none;font-weight:700;
+  font-size:0.9rem;white-space:nowrap;
+  transition:background .18s;
+  display:inline-block;
+}
+.btn-white:hover{background:#EFF6FF}
+
+/* ─── FOOTER ──────────────────────────────────────────────── */
+footer{
+  background:var(--ink);
+  padding:36px 48px;
+  display:flex;align-items:center;justify-content:space-between;
+  flex-wrap:wrap;gap:16px;
+}
+.ft-logo{font-family:var(--serif);color:var(--white);font-size:1rem;font-weight:700;text-decoration:none}
+.ft-logo b{color:var(--blue)}
+.ft-copy{color:rgba(255,255,255,0.3);font-size:0.8rem}
+.ft-links{display:flex;gap:24px}
+.ft-links a{color:rgba(255,255,255,0.35);font-size:0.8rem;text-decoration:none;transition:color .15s}
+.ft-links a:hover{color:rgba(255,255,255,0.7)}
+
+/* ─── REVEAL ──────────────────────────────────────────────── */
+.reveal{opacity:0;transform:translateY(20px);transition:opacity .5s ease,transform .5s ease}
+.reveal.in{opacity:1;transform:translateY(0)}
+.rd1{transition-delay:.05s}.rd2{transition-delay:.12s}.rd3{transition-delay:.19s}
+.rd4{transition-delay:.26s}.rd5{transition-delay:.33s}.rd6{transition-delay:.4s}
+
+/* ─── RESPONSIVE ──────────────────────────────────────────── */
+@media(max-width:1024px){
+  .svc-grid{grid-template-columns:repeat(2,1fr)}
+  .drawer-inner{grid-template-columns:1fr 1fr}
+  .why-grid{grid-template-columns:repeat(2,1fr)}
+  #about .about-grid{grid-template-columns:1fr}
+}
+@media(max-width:768px){
+  nav{padding:0 20px}
+  .nav-links{display:none}
+  #hero{padding:120px 20px 72px}
+  .hero-inner{grid-template-columns:1fr}
+  .hero-panel{display:none}
+  .wrap{padding:0 20px}
+  .sec{padding:64px 0}
+  .svc-grid{grid-template-columns:1fr}
+  .comp-table td:first-child{width:auto;display:block;padding-bottom:12px;padding-right:0}
+  .comp-table td:last-child{display:block;padding-top:0}
+  .why-grid{grid-template-columns:1fr}
+  .drawer-inner{grid-template-columns:1fr;gap:28px}
+  #cta{padding:56px 20px}
+  footer{padding:28px 20px;flex-direction:column;align-items:flex-start}
+  .svc-drawer{padding:28px 20px}
+}
+@media(prefers-reduced-motion:reduce){
+  .reveal{opacity:1;transform:none;transition:none}
+  .ticker-inner{animation:none}
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a href="#" class="nav-logo">[Company<b>Name</b>]</a>
+  <ul class="nav-links">
+    <li><a href="#about">About</a></li>
+    <li><a href="#services">Services</a></li>
+    <li><a href="#competencies">Capabilities</a></li>
+    <li><a href="#why">Why Us</a></li>
+    <li><a href="#cta" class="nav-btn">Get in Touch</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<section id="hero">
+  <div class="hero-bg-line"></div>
+  <div class="hero-inner">
+    <div>
+      <div class="hero-tag">Enterprise IT &amp; Education Technology</div>
+      <h1 class="hero-h1">Higher Education IT.<br/>Done <em>Right</em>.</h1>
+      <p class="hero-p">We support universities with the full spectrum of enterprise technology — from Learning Management Systems and Student Information Platforms to ERP, Service Desk, and managed application support.</p>
+      <div class="hero-actions">
+        <a href="#services" class="btn-blue">Our Services</a>
+        <a href="#cta" class="btn-text">Contact Us <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+      </div>
+    </div>
+    <div class="hero-panel reveal rd2">
+      <div class="panel-label">Service Areas</div>
+      <ul class="panel-list">
+        <li><span class="pl-dot"></span>LMS Support &amp; Enhancement</li>
+        <li><span class="pl-dot"></span>University ERP Implementation</li>
+        <li><span class="pl-dot"></span>Content Management Systems</li>
+        <li><span class="pl-dot"></span>Student Systems &amp; Administration</li>
+        <li><span class="pl-dot"></span>Enterprise Application Support</li>
+        <li><span class="pl-dot"></span>IT Service Desk Operations</li>
+        <li><span class="pl-dot"></span>Digital Transformation Advisory</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- TICKER -->
+<div class="ticker" aria-hidden="true">
+  <div class="ticker-inner">
+    <span>LMS &amp; Moodle Support <b>·</b></span>
+    <span>SITS / Banner Integration <b>·</b></span>
+    <span>ServiceNow <b>·</b></span>
+    <span>ERP Administration <b>·</b></span>
+    <span>IT Service Management <b>·</b></span>
+    <span>Business Analysis <b>·</b></span>
+    <span>Digital Transformation <b>·</b></span>
+    <span>Change Management <b>·</b></span>
+    <span>Application Support <b>·</b></span>
+    <span>SQL &amp; Reporting <b>·</b></span>
+    <span>Stakeholder Engagement <b>·</b></span>
+    <span>Product Ownership <b>·</b></span>
+    <span>LMS &amp; Moodle Support <b>·</b></span>
+    <span>SITS / Banner Integration <b>·</b></span>
+    <span>ServiceNow <b>·</b></span>
+    <span>ERP Administration <b>·</b></span>
+    <span>IT Service Management <b>·</b></span>
+    <span>Business Analysis <b>·</b></span>
+    <span>Digital Transformation <b>·</b></span>
+    <span>Change Management <b>·</b></span>
+    <span>Application Support <b>·</b></span>
+    <span>SQL &amp; Reporting <b>·</b></span>
+    <span>Stakeholder Engagement <b>·</b></span>
+    <span>Product Ownership <b>·</b></span>
+  </div>
+</div>
+
+<!-- ABOUT -->
+<section id="about" class="sec">
+  <div class="wrap">
+    <div class="about-grid">
+      <div>
+        <div class="sec-head reveal">
+          <div class="sec-label">About Us</div>
+          <h2 class="sec-h2">We Know University IT From the Inside</h2>
+        </div>
+        <div class="about-body reveal rd1">
+          <p>Our team brings together professionals with direct, hands-on experience in higher-education technology environments — not consultants who have studied the sector from a distance, but practitioners who have worked within it.</p>
+          <p>We understand the competing stakeholder interests, governance frameworks, and service ethos that enterprise and education environments demand. That context shapes how we plan, how we communicate, and how we deliver.</p>
+          <div class="about-callout">
+            <p>"We combine technical delivery with structured business analysis and change management — giving institutions both the strategic insight and operational execution they need to succeed."</p>
+          </div>
+        </div>
+      </div>
+      <div class="reveal rd2">
+        <div class="pillar">
+          <div class="pillar-icon">🎓</div>
+          <div>
+            <div class="pillar-title">Sector-Specific Experience</div>
+            <div class="pillar-desc">Hands-on work with LMS, ERP, and student administration systems — not general enterprise IT applied generically to education.</div>
+          </div>
+        </div>
+        <div class="pillar">
+          <div class="pillar-icon">🔍</div>
+          <div>
+            <div class="pillar-title">Business Analysis at the Core</div>
+            <div class="pillar-desc">Every engagement is grounded in structured requirements gathering, process design, and stakeholder alignment before a single line of configuration is changed.</div>
+          </div>
+        </div>
+        <div class="pillar">
+          <div class="pillar-icon">🤝</div>
+          <div>
+            <div class="pillar-title">Multi-Stakeholder Management</div>
+            <div class="pillar-desc">Proven experience engaging faculty, IT teams, student unions, and senior leadership — often simultaneously, often with competing priorities.</div>
+          </div>
+        </div>
+        <div class="pillar" style="border-bottom:none">
+          <div class="pillar-icon">🏗️</div>
+          <div>
+            <div class="pillar-title">End-to-End Delivery</div>
+            <div class="pillar-desc">From initial requirements through UAT, go-live, and hypercare support — we stay accountable for the outcome, not just our phase of it.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section id="services" class="sec sec-alt">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div class="sec-label">What We Do</div>
+      <h2 class="sec-h2">Our Services</h2>
+      <p class="sec-sub">Each engagement below reflects real work delivered by members of our team. Select any service to see the full scope.</p>
+    </div>
+  </div>
+
+  <div style="max-width:var(--max);margin:0 auto;padding:0 48px" class="reveal rd1">
+    <div class="svc-grid" id="svcGrid"></div>
+    <div class="svc-drawer" id="svcDrawer"></div>
+  </div>
+</section>
+
+<!-- COMPETENCIES -->
+<section id="competencies" class="sec">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div class="sec-label">Capabilities</div>
+      <h2 class="sec-h2">Core Competencies</h2>
+      <p class="sec-sub">A cross-functional capability set built through enterprise delivery in education, public sector, and utility environments.</p>
+    </div>
+    <table class="comp-table reveal rd1">
+      <tbody>
+        <tr>
+          <td>Higher Education Systems</td>
+          <td><div class="comp-items-row">
+            <span class="comp-pill">Learning Management Systems</span>
+            <span class="comp-pill">Student Administration</span>
+            <span class="comp-pill">Academic Operations</span>
+            <span class="comp-pill">User Support &amp; Training</span>
+          </div></td>
+        </tr>
+        <tr>
+          <td>Enterprise Applications</td>
+          <td><div class="comp-items-row">
+            <span class="comp-pill">ERP (Finance, HR, Procurement)</span>
+            <span class="comp-pill">CMS Platforms</span>
+            <span class="comp-pill">GIS Systems</span>
+            <span class="comp-pill">Application Integration</span>
+          </div></td>
+        </tr>
+        <tr>
+          <td>Service Delivery</td>
+          <td><div class="comp-items-row">
+            <span class="comp-pill">Incident &amp; Problem Management</span>
+            <span class="comp-pill">Change Management</span>
+            <span class="comp-pill">ITIL-Aligned Processes</span>
+            <span class="comp-pill">Service Desk Operations</span>
+          </div></td>
+        </tr>
+        <tr>
+          <td>Business Analysis</td>
+          <td><div class="comp-items-row">
+            <span class="comp-pill">Requirements Gathering</span>
+            <span class="comp-pill">Process Improvement</span>
+            <span class="comp-pill">User Story Development</span>
+            <span class="comp-pill">Product Ownership</span>
+          </div></td>
+        </tr>
+        <tr>
+          <td>Technology &amp; Development</td>
+          <td><div class="comp-items-row">
+            <span class="comp-pill">SQL &amp; Database Design</span>
+            <span class="comp-pill">Web Application Development</span>
+            <span class="comp-pill">System Architecture</span>
+            <span class="comp-pill">Reporting &amp; Analytics</span>
+          </div></td>
+        </tr>
+        <tr>
+          <td>Governance</td>
+          <td><div class="comp-items-row">
+            <span class="comp-pill">KPI Reporting</span>
+            <span class="comp-pill">Operational Reviews</span>
+            <span class="comp-pill">Service Improvement Plans</span>
+            <span class="comp-pill">Performance Monitoring</span>
+          </div></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<!-- WHY -->
+<section id="why" class="sec">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div class="sec-label">Why Us</div>
+      <h2 class="sec-h2">What Sets Us Apart</h2>
+      <p class="sec-sub">We are not a general IT supplier. We are a specialist partner for university technology environments.</p>
+    </div>
+    <div class="why-grid">
+      <div class="why-cell reveal rd1">
+        <div class="why-num">01</div>
+        <div class="why-title">Sector Knowledge</div>
+        <div class="why-desc">Direct experience with LMS, ERP, student administration, and academic operations — not generic IT applied to the education sector.</div>
+      </div>
+      <div class="why-cell reveal rd2">
+        <div class="why-num">02</div>
+        <div class="why-title">Delivery Discipline</div>
+        <div class="why-desc">Structured analysis, product ownership, and change management are built into every engagement — not optional add-ons.</div>
+      </div>
+      <div class="why-cell reveal rd3">
+        <div class="why-num">03</div>
+        <div class="why-title">Stakeholder Fluency</div>
+        <div class="why-desc">Proven ability to navigate faculty, IT, student services, and senior leadership — often with competing priorities and tight timelines.</div>
+      </div>
+      <div class="why-cell reveal rd4">
+        <div class="why-num">04</div>
+        <div class="why-title">Scalable Partnership</div>
+        <div class="why-desc">From targeted enhancements to enterprise-wide transformation — we scale our model to your programme, not the other way around.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section id="cta">
+  <div class="cta-inner">
+    <div class="reveal">
+      <div class="cta-h">Ready to talk?</div>
+      <p class="cta-p">We'd welcome the opportunity to discuss how we can support your organisation.</p>
+    </div>
+    <div style="display:flex;flex-direction:column;gap:10px" class="reveal rd2">
+      <div style="color:rgba(255,255,255,0.8);font-size:0.9rem">📧 [email@company.com]</div>
+      <div style="color:rgba(255,255,255,0.8);font-size:0.9rem">📞 [+44 000 000 0000]</div>
+      <div style="color:rgba(255,255,255,0.8);font-size:0.9rem">🌐 [www.company.com]</div>
+    </div>
+    <a href="mailto:contact@company.com" class="btn-white reveal rd3">Send an Enquiry →</a>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <a href="#" class="ft-logo">[Company<b>Name</b>]</a>
+  <div class="ft-copy">© 2025 [Company Name]. All rights reserved.</div>
+  <div class="ft-links">
+    <a href="#about">About</a>
+    <a href="#services">Services</a>
+    <a href="#competencies">Capabilities</a>
+    <a href="#cta">Contact</a>
+  </div>
+</footer>
+
+<script>
+const services = [
+  {
+    area:"Higher Education",
+    name:"Learning Management System — Support & Enhancement",
+    overview:"We supported and enhanced a university LMS used across student learning, coursework management, assessments, and academic collaboration — working directly with faculty and IT stakeholders throughout.",
+    tags:["LMS","UAT","Stakeholder Mgmt","Change Requests"],
+    responsibilities:[
+      "Requirements gathering with academic stakeholders",
+      "User acceptance testing coordination",
+      "Change request and impact assessment management",
+      "Incident analysis and structured resolution",
+      "Integration coordination with adjacent university systems",
+      "Release planning and deployment oversight"
+    ],
+    technologies:["LMS Platform","SQL Database","Web Applications","Reporting Tools"],
+    outcomes:[
+      "Improved adoption across academic departments",
+      "Reduced incident resolution timelines",
+      "Enhanced experience through evidence-based improvements",
+      "Stronger stakeholder feedback mechanisms"
+    ],
+    relevance:"Direct experience supporting mission-critical academic platforms alongside university IT and faculty — precisely what LMS support engagements require."
+  },
+  {
+    area:"Higher Education Administration",
+    name:"University ERP — Support & Process Improvement",
+    overview:"We supported ERP systems used for finance, human resources, procurement, and administrative operations within a higher-education environment, improving processes and user experience across functions.",
+    tags:["ERP","Business Analysis","SQL","Functional Testing"],
+    responsibilities:[
+      "Business process analysis and documentation",
+      "Functional and regression testing",
+      "End-user support and query resolution",
+      "Requirements documentation and change impact assessment",
+      "Stakeholder communication and training coordination"
+    ],
+    technologies:["ERP Platform","SQL Databases","Business Intelligence & Reporting"],
+    outcomes:[
+      "Improved operational efficiency across administrative functions",
+      "Reduced dependency on manual processes",
+      "Enhanced reporting accuracy for institutional decisions",
+      "Improved end-user support satisfaction"
+    ],
+    relevance:"Experience directly comparable to university ERP environments such as Agresso, Unit4, and Oracle Financials — covering the full functional scope of finance, HR, and procurement."
+  },
+  {
+    area:"Education & Public Sector",
+    name:"Content Management System Enhancement",
+    overview:"We supported and enhanced CMS platforms used to publish institutional information, student resources, academic announcements, and public-facing services — improving content workflow and publishing efficiency.",
+    tags:["CMS","SQL Server","Web","Workflow Design"],
+    responsibilities:[
+      "Requirements gathering and stakeholder workshops",
+      "Content workflow analysis and redesign",
+      "User acceptance testing and quality assurance",
+      "Issue management and resolution tracking",
+      "Cross-functional stakeholder coordination"
+    ],
+    technologies:["CMS Platform","SQL Server","Web Technologies","Workflow Management"],
+    outcomes:[
+      "Improved content publishing efficiency and turnaround",
+      "Enhanced student and staff experience",
+      "Reduced administrative overhead for content teams"
+    ],
+    relevance:"Universities depend heavily on CMS platforms for student communications, programme information, and public services — this engagement maps directly to that environment."
+  },
+  {
+    area:"Higher Education",
+    name:"Online Attendance Management System",
+    overview:"We designed and built a web-based attendance management system to automate tracking, compliance reporting, and visibility across academic operations — from initial analysis through deployment.",
+    tags:["Web App","SQL","Reporting","RBAC","System Design"],
+    responsibilities:[
+      "End-to-end system analysis and solution design",
+      "Database architecture and schema design",
+      "Application development and testing",
+      "Automated reporting and analytics development",
+      "User interface design and usability focus",
+      "Deployment and post-launch support"
+    ],
+    technologies:["Web Application Framework","SQL Database","Reporting Engine","Role-Based Access Control"],
+    outcomes:[
+      "Significant reduction in manual attendance recording",
+      "Real-time visibility for academic administrators",
+      "Automated compliance and exception reporting",
+      "Scalable architecture for multi-campus deployment"
+    ],
+    relevance:"Purpose-built for academic operations — demonstrates our ability to design and deliver student administration tools from scratch, not just support existing ones."
+  },
+  {
+    area:"Enterprise Operations",
+    name:"Enterprise GIS Operations & Asset Management",
+    overview:"We supported a large-scale enterprise GIS platform managing operational assets, workforce activities, and infrastructure data — acting as product owners and business analysts across multiple enhancement programmes.",
+    tags:["GIS / ArcGIS","Oracle DB","SQL Server","Product Ownership"],
+    responsibilities:[
+      "Business analysis and requirements management",
+      "Product ownership and backlog prioritisation",
+      "Stakeholder engagement across technical and operational teams",
+      "Process improvement workshops and documentation",
+      "User story creation and acceptance criteria definition",
+      "Enhancement planning and delivery oversight"
+    ],
+    technologies:["Esri ArcGIS","Oracle Database","SQL Server","Web Applications","Operational Dashboards"],
+    outcomes:[
+      "Improved operational visibility across the asset base",
+      "Enhanced data-driven decision-making for field operations",
+      "Increased process automation reducing manual effort",
+      "Strengthened asset information management"
+    ],
+    relevance:"Demonstrates our capability to own and drive complex enterprise applications — directly transferable to university application support engagements."
+  },
+  {
+    area:"Service Management",
+    name:"Network Operations & Service Restoration Analytics",
+    overview:"We developed operational analytics and KPI reporting solutions to improve incident response, outage management, and service restoration — including stakeholder workshops and performance dashboards.",
+    tags:["BI / Reporting","SQL Server","KPIs","Data Analysis"],
+    responsibilities:[
+      "Business requirements analysis and KPI framework development",
+      "Reporting design and data visualisation",
+      "Performance analysis and insight generation",
+      "Stakeholder workshop facilitation",
+      "Service improvement recommendations and tracking"
+    ],
+    technologies:["Business Intelligence Platform","SQL Server","Reporting & Visualisation","Operational Data Stores"],
+    outcomes:[
+      "Measurable reduction in service restoration times",
+      "Improved real-time operational visibility",
+      "Enhanced management reporting for governance cycles",
+      "Better resource planning through analytics"
+    ],
+    relevance:"Operational support, incident management, KPI-driven service improvement, and performance reporting — directly applicable to university IT service operations and ITSM environments."
+  }
+];
+
+let activeIdx = null;
+
+function renderServices(){
+  const grid = document.getElementById('svcGrid');
+  grid.innerHTML = services.map((s,i)=>`
+    <div class="svc-card${activeIdx===i?' active':''}" onclick="toggleDrawer(${i})">
+      <div class="svc-top-bar"></div>
+      <div class="svc-area">${s.area}</div>
+      <div class="svc-name">${s.name}</div>
+      <p class="svc-overview">${s.overview}</p>
+      <div class="svc-tags">${s.tags.map(t=>`<span class="stag">${t}</span>`).join('')}</div>
+      <button class="svc-more">
+        ${activeIdx===i?'Close ↑':'View Details →'}
+      </button>
+    </div>`).join('');
+}
+
+function toggleDrawer(idx){
+  const drawer = document.getElementById('svcDrawer');
+  if(activeIdx===idx){
+    activeIdx=null;
+    drawer.classList.remove('open');
+    drawer.innerHTML='';
+    renderServices();
+    return;
+  }
+  activeIdx=idx;
+  const s=services[idx];
+  drawer.innerHTML=`
+    <div class="drawer-inner">
+      <div>
+        <div class="d-col-title">What We Delivered</div>
+        <ul class="d-list">${s.responsibilities.map(r=>`<li>${r}</li>`).join('')}</ul>
+      </div>
+      <div>
+        <div class="d-col-title">Technologies Used</div>
+        <div class="d-chips">${s.technologies.map(t=>`<span class="d-chip">${t}</span>`).join('')}</div>
+        <div style="margin-top:28px">
+          <div class="d-col-title">Outcomes</div>
+          <ul class="d-list">${s.outcomes.map(o=>`<li>${o}</li>`).join('')}</ul>
+        </div>
+      </div>
+      <div>
+        <div class="d-col-title">Relevance to University IT</div>
+        <p class="d-relevance">${s.relevance}</p>
+      </div>
+    </div>`;
+  drawer.classList.add('open');
+  renderServices();
+  // Scroll drawer into view
+  setTimeout(()=>drawer.scrollIntoView({behavior:'smooth',block:'nearest'}),50);
+}
+
+renderServices();
+
+// Scroll reveal
+const obs = new IntersectionObserver(entries=>{
+  entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');obs.unobserve(e.target);}});
+},{threshold:0.1});
+document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));
+</script>
+</body>
+</html>
